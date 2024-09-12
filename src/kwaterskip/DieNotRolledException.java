@@ -9,4 +9,7 @@ package kwaterskip;
 
 public class DieNotRolledException extends RuntimeException  {
 
+    public String getMessage(){
+        return "Illegal number of sides: ";
+    }
 }
