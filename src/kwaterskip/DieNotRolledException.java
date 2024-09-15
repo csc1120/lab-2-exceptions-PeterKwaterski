@@ -10,6 +10,6 @@ package kwaterskip;
 public class DieNotRolledException extends RuntimeException  {
 
     public String getMessage(){
-        return "Illegal number of sides: ";
+        return "The Die Have Not Been Rolled!";
     }
 }

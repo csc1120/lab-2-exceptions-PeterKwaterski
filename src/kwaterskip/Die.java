@@ -16,7 +16,7 @@ public class Die {
 
     private final int numSides;
     private int currentValue;
-    private Random random;
+    private final Random random = new Random();
 
     public Die(int numSides){
         if(numSides < MIN_SIDES || numSides > MAX_SIDES){
@@ -26,7 +26,7 @@ public class Die {
     }
 
     public int getCurrentValue(){
-        if(currentValue < MIN_SIDES || currentValue > MAX_SIDES){
+        if(currentValue < 1 || currentValue > numSides){
             throw new DieNotRolledException();
         }
         int curr = currentValue;
@@ -35,7 +35,7 @@ public class Die {
     }
 
     public void roll(){
-        currentValue = random.nextInt(numSides-MIN_SIDES + 1) + MIN_SIDES;
+        currentValue = random.nextInt(numSides) + 1;
     }
 
 }
