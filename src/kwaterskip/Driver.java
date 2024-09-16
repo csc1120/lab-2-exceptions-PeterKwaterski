@@ -37,8 +37,12 @@ public class Driver {
         boolean good = false;
         int[] input;
         Die[] dice = null;
+
+        //Loop to ensure that all bad inputs are fixed before continuing
         do{
             input = getInput();
+            //Checks to ensure that the die are rolled at least once and that the dice are legal
+            //throws an exception otherwise
             try{
                 dice = createDice(input[0], input[1]);
                 if(input[2] == 0){
@@ -50,6 +54,7 @@ public class Driver {
             } catch (DieNotRolledException e){
                 System.out.println(e.getMessage());
             }
+            //Ensures the number of dice are between the min and max
             try{
                 if(input[0] < MIN_DICE || input[0] > MAX_DICE){
                     throw new IllegalArgumentException();
@@ -83,6 +88,8 @@ public class Driver {
         int[] result = new int[3];
         Scanner reader = new Scanner(System.in);
         boolean good = false;
+        //Loop to catch some of the bad inputs before passing to main
+        //Continues prompting until these requirements are met
         do {
             System.out.println("""
                     Please enter the number of dice to roll, \
@@ -92,6 +99,7 @@ public class Driver {
                     """);
             System.out.print("Enter configuration:");
             String[] entries = reader.nextLine().split(" ");
+            //Checks the number of inputs and the type of input
             try {
                 if (entries.length != 3) {
                     throw new IllegalArgumentException();
@@ -192,6 +200,8 @@ public class Driver {
         int minSpaces = 4;
         int maxRollDigits = (int) Math.log10(max) + 1;
 
+        //Ensures proper spacing in the result based on length of numbers
+        //Both in the total and the number of times rolled
         for (int i = 0; i < rolls.length; i++) {
             int numStars = rolls[i] / scale;
             int rollNumDigits = 1;

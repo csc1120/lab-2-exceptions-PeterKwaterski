@@ -13,6 +13,6 @@ package kwaterskip;
 public class DieNotRolledException extends RuntimeException {
 
     public String getMessage(){
-        return "The Die Have Not Been Rolled!";
+        return "The Dice Have Not Been Rolled!";
     }
 }
