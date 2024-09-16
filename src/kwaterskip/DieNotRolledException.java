@@ -3,7 +3,7 @@
  * Lab 2 - Exceptions
  * DieNotRolledException class
  * Name: Peter Kwaterski
- * Last Updated: 10/15/2024
+ * Last Updated: 10/16/2024
  */
 package kwaterskip;
 
